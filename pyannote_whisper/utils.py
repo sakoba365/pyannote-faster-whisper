@@ -3,10 +3,10 @@ from pyannote.core import Segment, Annotation, Timeline
 
 def get_text_with_timestamp(transcribe_res):
     timestamp_texts = []
-    for item in transcribe_res['segments']:
-        start = item['start']
-        end = item['end']
-        text = item['text']
+    for item in transcribe_res:
+        start = item.start
+        end = item.end
+        text = item.text
         timestamp_texts.append((Segment(start, end), text))
     return timestamp_texts
 
